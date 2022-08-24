@@ -29,7 +29,7 @@ public class DataSourceTests {
 	@Setter(onMethod_ = { @Autowired })
 	private SqlSessionFactory sqlSessionFactory;
 	
-
+//testtest
 	@Test
 	public void testConnection() {
 		try(Connection con = dataSource.getConnection()){
