@@ -1,7 +1,5 @@
-integration test 20222308
-
 책이름 : 코드로 배우는 스프링 웹 프로젝트
-집컴퓨터
+
 1. 자바버전 : jdk1.8.0_261
 2. eclipse 버전 : eclipse-jee-2019-12-R-win32-x86_64
 3. spring tools 3 플러그인 추가 : Eclipse내 Help/MarketPlace
@@ -33,39 +31,24 @@ integration test 20222308
 	INFO : org.springframework.context.support.GenericApplicationContext - Closing org.springframework.context.support.GenericApplicationContext@31dc339b: startup date [Thu Jul 07 23:09:26 KST 2022]; root of context hierarchy
 	
 	1) New 한적 없는데 Restaurant와 같이 클래스 객체 생성, 일종 컨테이너나 팩토리 기능 가지고 있음
+	
+4.	Tomcat Server
+	1. 오른쪽 클릭 new Server
+	2. server name 변경
+	3. 해당 소스 선택 후 생성
 
-4. runtime 주석 처리하여 log4j 사용
-			<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.15</version>
-			<exclusions>
-				<exclusion>
-					<groupId>javax.mail</groupId>
-					<artifactId>mail</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>javax.jms</groupId>
-					<artifactId>jms</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jdmk</groupId>
-					<artifactId>jmxtools</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>com.sun.jmx</groupId>
-					<artifactId>jmxri</artifactId>
-				</exclusion>
-			</exclusions>
-			<!-- <scope>runtime</scope> -->
-		</dependency>
-		
-5. pom.xml log경로 찾을 수 있도록 한글 인식 jar 추가
-		<!--  xml parce path 한글 인식 -->
-		<dependency>
-		    <groupId>xerces</groupId>
-		    <artifactId>xercesImpl</artifactId>
-		    <version>2.9.1</version>
-		</dependency>	
-		
+5. Sample Controller 시작시
+	INFO : org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'appServlet': initialization started
+	INFO : org.springframework.web.context.support.XmlWebApplicationContext - Refreshing WebApplicationContext for namespace 'appServlet-servlet': startup date [Thu Jul 28 21:49:23 KST 2022]; parent: Root WebApplicationContext
+	INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from ServletContext resource [/WEB-INF/spring/appServlet/servlet-context.xml]
+	INFO : org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+	INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/],methods=[GET]}" onto public java.lang.String org.zerock.controller.HomeController.home(java.util.Locale,org.springframework.ui.Model)
+	INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping - Mapped "{[/sample/*]}" onto public void org.zerock.controller.SampleController.basic()
+	INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Thu Jul 28 21:49:23 KST 2022]; parent: Root WebApplicationContext
+	INFO : org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: WebApplicationContext for namespace 'appServlet-servlet': startup date [Thu Jul 28 21:49:23 KST 2022]; parent: Root WebApplicationContext
+	INFO : org.springframework.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+INFO : org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'appServlet': initialization completed in 1564 ms
 
+
+test
+testtest
